@@ -195,6 +195,7 @@
                                                                   alignment:[self getActionsTextAlignment]
                                                             backgroundColor:DEFAULT_BTN_COLOR
                                                                   textColor:DEFAULT_BTN_TITLE_COLOR
+                                                              shouldDismiss:NO
                                                                     handler:^(CFAlertAction * _Nonnull action) {
                                                                         NSLog(@"Action Button Clicked [%@]", action.title);
                                                                     }];
@@ -208,6 +209,7 @@
                                                                    alignment:[self getActionsTextAlignment]
                                                              backgroundColor:DESTRUCTIVE_BTN_COLOR
                                                                    textColor:DESTRUCTIVE_BTN_TITLE_COLOR
+                                                               shouldDismiss:YES
                                                                      handler:^(CFAlertAction * _Nonnull action) {
                                                                          NSLog(@"Action Button Clicked [%@]", action.title);
                                                                      }];
@@ -221,6 +223,7 @@
                                                                  alignment:[self getActionsTextAlignment]
                                                            backgroundColor:CANCEL_BTN_COLOR
                                                                  textColor:CANCEL_BTN_TITLE_COLOR
+                                                             shouldDismiss:YES
                                                                    handler:^(CFAlertAction * _Nonnull action) {
                                                                        NSLog(@"Action Button Clicked [%@]", action.title);
                                                                    }];
