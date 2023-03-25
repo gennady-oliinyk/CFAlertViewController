@@ -196,6 +196,7 @@
                                                             backgroundColor:DEFAULT_BTN_COLOR
                                                                   textColor:DEFAULT_BTN_TITLE_COLOR
                                                               shouldDismiss:NO
+                                                                   newTitle:@"New title"
                                                                     handler:^(CFAlertAction * _Nonnull action) {
                                                                         NSLog(@"Action Button Clicked [%@]", action.title);
                                                                     }];
@@ -210,6 +211,7 @@
                                                              backgroundColor:DESTRUCTIVE_BTN_COLOR
                                                                    textColor:DESTRUCTIVE_BTN_TITLE_COLOR
                                                                shouldDismiss:YES
+                                                                    newTitle:nil
                                                                      handler:^(CFAlertAction * _Nonnull action) {
                                                                          NSLog(@"Action Button Clicked [%@]", action.title);
                                                                      }];
@@ -224,6 +226,7 @@
                                                            backgroundColor:CANCEL_BTN_COLOR
                                                                  textColor:CANCEL_BTN_TITLE_COLOR
                                                              shouldDismiss:YES
+                                                                  newTitle:nil
                                                                    handler:^(CFAlertAction * _Nonnull action) {
                                                                        NSLog(@"Action Button Clicked [%@]", action.title);
                                                                    }];

@@ -1,3 +1,4 @@
+
 //
 //  CFAlertViewController.swift
 //  CFAlertViewControllerDemo
@@ -797,9 +798,29 @@ extension CFAlertViewController: UITableViewDataSource, UITableViewDelegate, CFA
     
     // MARK: CFAlertActionTableViewCellDelegate
     public func alertActionCell(_ cell: CFAlertActionTableViewCell, didClickAction action: CFAlertAction?) {
+        var indexPathToReload: IndexPath?
         if let shouldDismiss = action?.shouldDismiss, shouldDismiss == false {
+
+            // if newTitle is set -> rename action
+            if let newTitle = action?.newTitle {
+                if let renamedAction = self.actions?.first(where: {$0.title == action?.title}) {
+                    renamedAction.title = newTitle
+                    renamedAction.newTitle = nil
+                    if let index = self.actions?.firstIndex(of: renamedAction) {
+                        self.actions?.remove(at: index)
+                        self.actions?.append(renamedAction)
+                        indexPathToReload = IndexPath(row: index, section: 1)
+                    }
+                }
+            }
+
+            // handle action without dismissing alert
             if let action = action, let actionHandler = action.handler {
                 actionHandler(action)
+                if let indexPath = indexPathToReload {
+                    self.tableView?.reloadRows(at: [indexPath], with: .automatic)
+                }
+
             }
         } else {
             // Dimiss Self

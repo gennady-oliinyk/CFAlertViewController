@@ -35,6 +35,7 @@ open class CFAlertAction: NSObject, NSCopying {
     @objc public var backgroundColor: UIColor?
     @objc public var textColor: UIColor?
     @objc public var shouldDismiss: Bool = false
+    @objc public var newTitle: String?
     @objc public var handler: CFAlertActionHandlerBlock?
 
 
@@ -45,6 +46,7 @@ open class CFAlertAction: NSObject, NSCopying {
                                    backgroundColor: UIColor?,
                                    textColor: UIColor?,
                                    shouldDismiss: Bool,
+                                   newTitle: String?,
                                    handler: CFAlertActionHandlerBlock?) -> CFAlertAction  {
 
         return CFAlertAction.init(title: title,
@@ -53,6 +55,7 @@ open class CFAlertAction: NSObject, NSCopying {
                                   backgroundColor: backgroundColor,
                                   textColor: textColor,
                                   shouldDismiss: shouldDismiss,
+                                  newTitle: newTitle,
                                   handler: handler)
     }
 
@@ -62,6 +65,7 @@ open class CFAlertAction: NSObject, NSCopying {
                                   backgroundColor: UIColor?,
                                   textColor: UIColor?,
                                   shouldDismiss: Bool,
+                                  newTitle: String?,
                                   handler: CFAlertActionHandlerBlock?) {
 
         // Create New Instance Of Alert Controller
@@ -74,6 +78,7 @@ open class CFAlertAction: NSObject, NSCopying {
         self.backgroundColor = backgroundColor
         self.textColor = textColor
         self.shouldDismiss = shouldDismiss
+        self.newTitle = newTitle
         self.handler = handler
     }
 
@@ -86,6 +91,7 @@ open class CFAlertAction: NSObject, NSCopying {
                                   backgroundColor: backgroundColor,
                                   textColor: textColor,
                                   shouldDismiss: shouldDismiss,
+                                  newTitle: newTitle,
                                   handler: handler)
     }
 
